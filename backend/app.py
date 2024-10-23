@@ -1,7 +1,9 @@
 import flask
 from flask import Flask, jsonify  # , render_template, request
 
+app = Flask(__name__)
 # Current source: https://medium.com/@arif555/containerizing-a-full-stack-web-application-a-step-by-step-guide-e9374f748177
+@app.route('/api/posts', methods=['GET'])
 def get_posts() -> flask.Response:
     """ Returns a list of posts
         :returns: A list of posts
@@ -24,5 +26,4 @@ def get_posts() -> flask.Response:
     )
 
 if __name__ == '__main__':
-    app = Flask(__name__)
     app.run(debug=True, host='0.0.0.0', port=8000)
