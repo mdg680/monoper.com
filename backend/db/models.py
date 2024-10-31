@@ -43,3 +43,12 @@ class Post(Base):
             f"content={self.content}, "
             f"date_posted={self.date_posted})"
         )
+
+    def get_json(self) -> dict:
+        """Return a JSON representation of the post."""
+        return {
+            "author": self.author,
+            "title": self.title,
+            "content": self.content,
+            "date_posted": self.date_posted,
+        }
