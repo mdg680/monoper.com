@@ -1,0 +1,11 @@
+# Pycharm configuration
+.idea/
+
+# Notes
+links.txt
+
+# Database
+db.sqlite3
+
+# Precompiled Python files
+**/*.pyc
