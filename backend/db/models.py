@@ -1,3 +1,4 @@
+import json
 from datetime import datetime
 
 from sqlalchemy import String
@@ -29,7 +30,7 @@ class Post(Base):
             title: str,
             content: str,
             date_posted: datetime
-        ):  # noqa: E125 Flake 8 is being too strict here
+        ):  # noqa: E125 Flake 8 is being too strict/wrong here
 
         self.author = author
         self.title = title
@@ -43,3 +44,12 @@ class Post(Base):
             f"content={self.content}, "
             f"date_posted={self.date_posted})"
         )
+
+    def as_json(self) -> json:
+        """Return a JSON representation of the post."""
+        return {
+            "author": self.author,
+            "title": self.title,
+            "content": self.content,
+            "date_posted": self.date_posted,
+        }

@@ -1,10 +1,10 @@
 import sqlite3
-from typing import List, Tuple
-from sqlalchemy import create_engine
+from typing import List
+from sqlalchemy import Sequence, create_engine
 from sqlalchemy import select
 from sqlalchemy import Engine
 from sqlalchemy.orm import Session
-from models import Post, Base
+from db.models import Post, Base
 
 
 class Database:
@@ -14,7 +14,7 @@ class Database:
 
         self.engine: Engine = create_engine("sqlite:///db.sqlite3")
 
-    def get_posts(self) -> List[Tuple[str, str, str, str]]:
+    def get_posts(self) -> Sequence[Post]:
         select_stmt = select(Post)
 
         return Session(self.engine).scalars(select_stmt).all()
