@@ -10,7 +10,6 @@ app = Flask(__name__)
 db = Database()
 
 
-# Current source: https://medium.com/@arif555/containerizing-a-full-stack-web-application-a-step-by-step-guide-e9374f748177 # noqa
 @app.route("/api/posts", methods=["GET"])
 def get_posts() -> flask.Response:
     """Returns a list of posts
