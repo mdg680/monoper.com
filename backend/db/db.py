@@ -36,9 +36,6 @@ class Database:
         self.engine.insert(post)
         self.conn.commit()
 
-    def drop(self, table: Base):
-        Base.metadata.drop_all(self.engine)
-
 
 if __name__ == "__main__":
     # Just for debugging # TODO: Replace with proper tests
