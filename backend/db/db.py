@@ -1,9 +1,12 @@
 import sqlite3
+
 from typing import List
+
 from sqlalchemy import Sequence, create_engine
 from sqlalchemy import select
 from sqlalchemy import Engine
 from sqlalchemy.orm import Session
+
 from db.models import Post, Base
 
 
