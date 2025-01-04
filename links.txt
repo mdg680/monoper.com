@@ -1,0 +1,2 @@
+https://www.digitalocean.com/community/tutorials/how-to-make-a-web-application-using-flask-in-python-3
+https://medium.com/@arif555/containerizing-a-full-stack-web-application-a-step-by-step-guide-e9374f748177
